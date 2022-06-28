@@ -9,7 +9,7 @@ npm install
 npm run start
 ```
 
-Serve to `https://localhost:3000/?domain=true&ip=true&connection=SOCKS5%20127.0.0.1:1080`
+Serve to `http://localhost:3000/?domain=true&ip=true&connection=SOCKS5%20127.0.0.1:1080`
 
 ## Docker
 
