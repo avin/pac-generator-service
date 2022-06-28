@@ -3,7 +3,7 @@ import * as http from 'http';
 
 const cacheResult: Record<string, { data: string; time: number }> = {};
 
-export const getUrlContent = async (url: string, cacheTime = 120_000): Promise<string> => {
+export const getUrlContent = async (url: string, cacheTime = 300_000): Promise<string> => {
   if (cacheResult[url] && new Date().getTime() - cacheResult[url].time > cacheTime) {
     return cacheResult[url].data;
   }
