@@ -25,3 +25,22 @@ services:
     ports:
       - "127.0.0.1:8080:3000"
 ```
+
+Systemd service example
+
+```editorconfig
+[Unit]
+Description=pac-generator-service
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+WorkingDirectory=/opt/pac-generator-service/
+ExecStartPre=/usr/local/bin/docker-compose -f docker-compose.yml down -v
+ExecStart=/usr/local/bin/docker-compose -f docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f docker-compose.yml down
+
+[Install]
+WantedBy=multi-user.target
+```

@@ -30,8 +30,8 @@ export class PacGeneratorService {
       proxies: [
         {
           connection,
-          domains: this.config.domains || [],
-          ips: this.config.ips || [],
+          domains: [...(this.config.domains || [])],
+          ips: [...(this.config.ips || [])],
         },
       ],
     };
